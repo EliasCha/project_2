@@ -10,17 +10,19 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8710,        209]
-NotebookOptionsPosition[      8237,        188]
-NotebookOutlinePosition[      8626,        205]
-CellTagsIndexPosition[      8583,        202]
+NotebookDataLength[     11327,        277]
+NotebookOptionsPosition[     10170,        244]
+NotebookOutlinePosition[     10526,        260]
+CellTagsIndexPosition[     10483,        257]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.715502399622534*^9, 3.715502416673644*^9}}],
+ CellChangeTimes->{{3.715502399622534*^9, 
+  3.715502416673644*^9}},ExpressionUUID->"211c148f-e3a3-4863-b726-\
+8f62e589388b"],
 
 Cell[BoxData[
  RowBox[{
@@ -75,45 +77,42 @@ Cell[BoxData[
            RowBox[{"cipher", "[", 
             RowBox[{"[", "x", "]"}], "]"}], ",", "dSomebody", ",", "n"}], 
           "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"For", "[", 
-       RowBox[{
-        RowBox[{"x", "=", "1"}], ",", 
-        RowBox[{"x", " ", "\[LessEqual]", " ", 
-         RowBox[{"Length", "[", "cipher", "]"}]}], ",", 
-        RowBox[{"x", "++"}], ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"messageFromSomeone", " ", "=", " ", 
-          RowBox[{"PowerMod", "[", 
-           RowBox[{
-            RowBox[{"cipher", "[", 
-             RowBox[{"[", "x", "]"}], "]"}], ",", "dSomebody", ",", "n"}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"Return", "[", "messageFromSomeone", "]"}]}]}], 
-       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
-    RowBox[{"(*", 
-     RowBox[{
       RowBox[{
-       RowBox[{"q", "=", "messageFromSomeone"}], ";", 
-       RowBox[{"ascii", "=", 
-        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{
-        RowBox[{"While", "[", 
+        RowBox[{"For", "[", 
          RowBox[{
-          RowBox[{"q", "\[NotEqual]", " ", "0"}], ",", "\[IndentingNewLine]", 
-          
+          RowBox[{"x", "=", "1"}], ",", 
+          RowBox[{"x", " ", "\[LessEqual]", " ", 
+           RowBox[{"Length", "[", "cipher", "]"}]}], ",", 
+          RowBox[{"x", "++"}], ",", "\[IndentingNewLine]", 
           RowBox[{
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"ascii", ",", 
-             RowBox[{"Mod", "[", 
-              RowBox[{"q", ",", "256"}], "]"}]}], "]"}], ";", 
-           "\[IndentingNewLine]", 
-           RowBox[{"q", "=", " ", 
-            RowBox[{"Quotient", "[", 
-             RowBox[{"q", ",", "256"}], "]"}]}], ";"}]}], 
-         "\[IndentingNewLine]", "]"}], "ascii", "\[IndentingNewLine]", 
-        RowBox[{"Return", "[", "ascii", "]"}]}]}], "\[IndentingNewLine]", 
-      "]"}], "*)"}], "\[IndentingNewLine]", "]"}]}], 
-  "\[IndentingNewLine]"}]], "Input",
+           RowBox[{"messageFromSomeone", " ", "=", " ", 
+            RowBox[{"PowerMod", "[", 
+             RowBox[{
+              RowBox[{"cipher", "[", 
+               RowBox[{"[", "x", "]"}], "]"}], ",", "dSomebody", ",", "n"}], 
+             "]"}]}], ";", "\[IndentingNewLine]", 
+           RowBox[{"Return", "[", "messageFromSomeone", "]"}]}]}], 
+         "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "q"}], "=", 
+       "messageFromSomeone"}], ";", 
+      RowBox[{"ascii", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{"q", "\[NotEqual]", " ", "0"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"ascii", ",", 
+            RowBox[{"Mod", "[", 
+             RowBox[{"q", ",", "256"}], "]"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"q", "=", " ", 
+           RowBox[{"Quotient", "[", 
+            RowBox[{"q", ",", "256"}], "]"}]}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], "ascii", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "ascii", "]"}]}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], "\[IndentingNewLine]"}]], "Input",
  CellChangeTimes->{{3.715415946669201*^9, 3.715415976574108*^9}, {
    3.715416044979538*^9, 3.715416057377338*^9}, {3.71541644263446*^9, 
    3.715416476710485*^9}, {3.715416574218665*^9, 3.715416600319108*^9}, {
@@ -143,54 +142,110 @@ Cell[BoxData[
    3.715503234017029*^9, 3.7155032643665333`*^9}, {3.715503318446773*^9, 
    3.715503326748488*^9}, {3.7155034417439203`*^9, 3.715503831959937*^9}, {
    3.715503925535569*^9, 3.7155039582052107`*^9}, {3.7155042704748583`*^9, 
-   3.715504278352861*^9}}],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"cipher2", " ", "=", 
-   RowBox[{"{", "1406472530939447964448506158181105110", "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-  "nBlyat", " ", "=", " ", "1252765385448283099646758665833079991417"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"eBlyat", " ", "=", " ", "2967"}], ";"}]}], "Input",
- CellChangeTimes->{{3.715502628420207*^9, 3.715502704730474*^9}, {
-   3.7155027853954697`*^9, 3.7155028634294443`*^9}, 3.715503056217313*^9, 
-   3.715503205775268*^9, 3.715504247923558*^9}],
+   3.715504278352861*^9}, {3.7155094484237337`*^9, 3.715509458101665*^9}, {
+   3.715509590204133*^9, 
+   3.715509611056654*^9}},ExpressionUUID->"bcf1e579-fe1f-4307-8b76-\
+3f6471f9035d"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<`*\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"blyat", " ", "=", " ", 
-   RowBox[{"rsaCracker", "[", 
+  RowBox[{"p", "=", "347"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q", "=", "349"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"n", " ", "=", " ", 
+  RowBox[{"p", "*", "q"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phi", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"p", "-", "1"}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"q", "-", "1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CoprimeQ", "[", 
+   RowBox[{"phi", ",", "211"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"e", " ", "=", " ", "211"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", " ", "256"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"message", " ", "=", " ", 
+  "\"\<hello world\>\""}], "\[IndentingNewLine]", 
+ RowBox[{"ascii", " ", "=", " ", 
+  RowBox[{"ToCharacterCode", "[", "message", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"mWilliam", "=", 
+  RowBox[{
+   RowBox[{"ToCharacterCode", "[", "message", "]"}], ".", " ", 
+   SuperscriptBox["B", 
     RowBox[{
-    "cipher2", ",", "622838935194103915034821260308245255297", ",", "8019"}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"Print", "[", "blyat", "]"}]}], "Input",
- CellChangeTimes->{{3.7154418310945387`*^9, 3.715441861623742*^9}, {
-   3.7154419631236973`*^9, 3.715441983410254*^9}, {3.715442056657221*^9, 
-   3.7154420634745827`*^9}, {3.715442133774126*^9, 3.715442134445478*^9}, {
-   3.7154424167045383`*^9, 3.715442422302432*^9}, 3.715502650216572*^9, {
-   3.7155027073707*^9, 3.7155027119459753`*^9}, {3.715503268390868*^9, 
-   3.7155032866925364`*^9}, {3.715504105353142*^9, 3.715504125758985*^9}}],
+     RowBox[{"Range", "[", 
+      RowBox[{"StringLength", "[", "message", "]"}], "]"}], "-", 
+     "1"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{"cipher", " ", "=", " ", 
+  RowBox[{"PowerMod", "[", 
+   RowBox[{"mWilliam", ",", " ", "e", ",", " ", "n"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"rsaCracker", "[", 
+  RowBox[{"cipher", ",", "n", ",", "e"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.715507746758225*^9, 3.715507768856638*^9}, {
+   3.7155079197313833`*^9, 3.71550810812754*^9}, {3.715508145479948*^9, 
+   3.715508151878677*^9}, 3.715508518885914*^9, {3.715508943563478*^9, 
+   3.7155089754087353`*^9}, 3.7155090057445087`*^9, 3.7155090581758623`*^9, {
+   3.7155091138710423`*^9, 3.715509161419774*^9}, {3.7155092271485453`*^9, 
+   3.715509233545701*^9}, {3.715509270050726*^9, 3.7155093070156183`*^9}, {
+   3.715509370185934*^9, 3.715509389605431*^9}, {3.715509570747995*^9, 
+   3.7155095727938747`*^9}},ExpressionUUID->"8afb3927-b920-4bec-9b3c-\
+f1fd4d6f7b78"],
 
-Cell[BoxData["370654315683266705223248251983814772868"], "Print",
+Cell[BoxData["121103"], "Output",
  CellChangeTimes->{
-  3.715503288412924*^9, {3.715503473441903*^9, 3.715503496328287*^9}, 
-   3.7155035758940496`*^9, {3.7155036224653063`*^9, 3.715503719351767*^9}, 
-   3.715503757468651*^9, {3.7155037877980213`*^9, 3.715503836680664*^9}, {
-   3.715503938970752*^9, 3.715503959793432*^9}, 3.715504128528832*^9, {
-   3.715504254033739*^9, 3.715504281912133*^9}, 3.715504427155026*^9}]
+  3.7155094346742363`*^9, {3.71550955907812*^9, 
+   3.71550960180096*^9}},ExpressionUUID->"1774283e-164f-4b4b-8134-\
+dadcbfa17f27"],
+
+Cell[BoxData["\<\"hello world\"\>"], "Output",
+ CellChangeTimes->{
+  3.7155094346742363`*^9, {3.71550955907812*^9, 
+   3.715509601811548*^9}},ExpressionUUID->"6e38514e-e761-484f-b56e-\
+fa66cae02eed"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "104", ",", "101", ",", "108", ",", "108", ",", "111", ",", "32", ",", 
+   "119", ",", "111", ",", "114", ",", "108", ",", "100"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7155094346742363`*^9, {3.71550955907812*^9, 
+   3.7155096018186607`*^9}},ExpressionUUID->"674a384a-9a5a-45f0-852f-\
+ab32ec0eb4f0"],
+
+Cell[BoxData["121404708502361365413651816"], "Output",
+ CellChangeTimes->{
+  3.7155094346742363`*^9, {3.71550955907812*^9, 
+   3.715509601825304*^9}},ExpressionUUID->"c931cb6f-e986-42f5-b80f-\
+f3b925c53f99"],
+
+Cell[BoxData["111090"], "Output",
+ CellChangeTimes->{
+  3.7155094346742363`*^9, {3.71550955907812*^9, 
+   3.715509601832038*^9}},ExpressionUUID->"68467b39-300d-4e6c-bb0d-\
+192bdb98da16"],
+
+Cell[BoxData[
+ RowBox[{"rsaCracker", "[", 
+  RowBox[{"111090", ",", "121103", ",", "211"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.7155094346742363`*^9, {3.71550955907812*^9, 
+   3.7155096018390293`*^9}},ExpressionUUID->"31303f0c-9957-4a24-b5fa-\
+170b3d6462b2"]
 }, Open  ]]
 },
-WindowSize->{1366, 656},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-Magnification:>1.25 Inherited,
-FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
-21, 2016)",
+WindowSize->{1078, 656},
+WindowMargins->{{22, Automatic}, {Automatic, 26}},
+FrontEndVersion->"11.1 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 27, \
+2017)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -204,12 +259,25 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 136, 2, 39, "Input"],
-Cell[697, 24, 5780, 121, 612, "Input"],
-Cell[6480, 147, 547, 13, 92, "Input"],
+Cell[558, 20, 196, 4, 32, "Input", "ExpressionUUID" -> \
+"211c148f-e3a3-4863-b726-8f62e589388b"],
+Cell[757, 26, 5873, 121, 474, "Input", "ExpressionUUID" -> \
+"bcf1e579-fe1f-4307-8b76-3f6471f9035d"],
 Cell[CellGroupData[{
-Cell[7052, 164, 716, 13, 66, "Input"],
-Cell[7771, 179, 450, 6, 29, "Print"]
+Cell[6655, 151, 2094, 48, 285, "Input", "ExpressionUUID" -> \
+"8afb3927-b920-4bec-9b3c-f1fd4d6f7b78"],
+Cell[8752, 201, 185, 4, 32, "Output", "ExpressionUUID" -> \
+"1774283e-164f-4b4b-8134-dadcbfa17f27"],
+Cell[8940, 207, 199, 4, 32, "Output", "ExpressionUUID" -> \
+"6e38514e-e761-484f-b56e-fa66cae02eed"],
+Cell[9142, 213, 346, 8, 32, "Output", "ExpressionUUID" -> \
+"674a384a-9a5a-45f0-852f-ab32ec0eb4f0"],
+Cell[9491, 223, 207, 4, 32, "Output", "ExpressionUUID" -> \
+"c931cb6f-e986-42f5-b80f-f3b925c53f99"],
+Cell[9701, 229, 186, 4, 32, "Output", "ExpressionUUID" -> \
+"68467b39-300d-4e6c-bb0d-192bdb98da16"],
+Cell[9890, 235, 264, 6, 32, "Output", "ExpressionUUID" -> \
+"31303f0c-9957-4a24-b5fa-170b3d6462b2"]
 }, Open  ]]
 }
 ]
